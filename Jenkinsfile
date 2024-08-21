@@ -11,13 +11,9 @@ pipeline {
         stage('Teste') {
             steps {
                bat '''set NO_COLOR=1
+               npm start
                 npm test'''
             }
         }
-        post {
-           always {
-               junit 'results/*.xml'
-           }
-       }
     }
 }
